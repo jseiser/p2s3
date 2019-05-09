@@ -6,7 +6,7 @@ Backup PostgresSQL to S3 (supports periodic backups) Mostly took from schickling
 
 Docker:
 ```sh
-$ docker run -e S3_ACCESS_KEY_ID=key -e S3_SECRET_ACCESS_KEY=secret -e S3_BUCKET=my-bucket -e S3_PREFIX=backup -e POSTGRES_DATABASE=dbname -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -e POSTGRES_HOST=localhost jseiser/p2s3
+$ docker run -e S3_ACCESS_KEY_ID=key -e S3_SECRET_ACCESS_KEY=secret -e S3_BUCKET=my-bucket -e S3_PREFIX=backup -e POSTGRES_DATABASE=dbname -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -e POSTGRES_HOST=localhost DB_ENV_PREFIX=prod  jseiser/p2s3
 ```
 
 Docker Compose:
@@ -23,7 +23,7 @@ pgbackups3:
     - postgres
   environment:
     SCHEDULE: '@daily'
-    DB_ENV_PREFIX=prod
+    DB_ENV_PREFIX: prod
     S3_REGION: region
     S3_ACCESS_KEY_ID: key
     S3_SECRET_ACCESS_KEY: secret
