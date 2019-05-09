@@ -17,6 +17,7 @@ ENV S3_PATH 'backup'
 ENV S3_ENDPOINT **None**
 ENV S3_S3V4 no
 ENV SCHEDULE **None**
+ENV DB_ENV_PREFIX **None**
 
 RUN apk --no-cache add \
           postgresql-client --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main && \
